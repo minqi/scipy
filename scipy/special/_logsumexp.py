@@ -107,6 +107,7 @@ def logsumexp(a, axis=None, b=None, keepdims=False, return_sign=False):
         b = np.asarray(b)
         tmp = b * np.exp(a - a_max)
     else:
+        a = np.maximum(-45, a)
         tmp = np.exp(a - a_max)
 
     # suppress warnings about log of zero
